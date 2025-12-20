@@ -88,7 +88,7 @@ const handleSubmit = async () => {
     setLoading(false);
   }
 
-   setPage("home");
+   setPage("success");
 };
 
 
@@ -224,6 +224,7 @@ const handleSubmit = async () => {
               <input
                 type="checkbox"
                 value={item}
+                data-testid={`topping-${item.toLowerCase().replace(" ", "-")}`}
                 checked={extras.includes(item)}
                 onChange={(e) => {
                   if (e.target.checked) {
@@ -263,13 +264,15 @@ const handleSubmit = async () => {
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-3">İsim</h3>
 
-        <input
-          type="text"
-          value={isim}
-          onChange={(e) => setIsim(e.target.value)}
-          className="border rounded-lg p-3 w-full"
-          placeholder="Adınızı giriniz"
-        />
+     <input
+  type="text"
+  value={isim}
+  onChange={(e) => setIsim(e.target.value)}
+  className="border rounded-lg p-3 w-full"
+  placeholder="Adınızı giriniz"
+  data-testid="name-input"
+/>
+
 
         {/* TRIMLI KONTROL */}
         {isim.trim().length > 0 && isim.trim().length < 3 && (
@@ -340,7 +343,7 @@ const handleSubmit = async () => {
                 </div>          
               </div>
               <div className="h-[62px] bg-[#FDC913] text-center py-4 mb-4">
-                <button
+                <button data-testid="submit-button"
                   onClick={handleSubmit}
                   disabled={!formValid || loading}
                 >
