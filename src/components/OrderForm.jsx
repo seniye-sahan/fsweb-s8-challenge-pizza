@@ -98,7 +98,7 @@ const handleSubmit = async () => {
   return (
     <>
 
-      <header className="bg-[#CE2829] w-[1,920px] h-[207px] border-b border-[#C20608]">
+      <header className="bg-[#CE2829] w-[540px] md:w-full h-[207px] border-b border-[#C20608]">
         <div className="mx-auto px-4 py-8 flex flex-col">
 
           <img
@@ -107,19 +107,19 @@ const handleSubmit = async () => {
            className="mx-auto mt-8"
           />
       
-          <div className="w-[532px] mx-auto px-4 mt-6 mb-1 py-8 font-[barlow]">
-            <nav className="text-sm text-white opacity-90 mb-1 ">
-            <span className="opacity-80 mb-1">Anasayfa - </span>
-            <span className="font-semibold">Sipariş Oluştur</span>
+          <div className="w-full max-w-[420px] mx-auto px-4 mt-4 md:mt-6 mb-1 py-4 md:py-8 font-[barlow]">
+            <nav className="md:text-sm text-xl text-[#FAF7F2] opacity-90 mb-1">
+            <span className="opacity-80 mb-1 font-normal">Anasayfa - </span>
+            <span className="md:font-semibold font-bold">Sipariş Oluştur</span>
             </nav>
           </div>
          
         </div>       
       </header>
 
-      <div className="w-[532px] mx-auto px-4 mt-6 mb-8 font-[barlow]">
+    <div className="md:w-[532px] w-[420px] mx-auto px-4 mt-6  mb-4 md:mb-8 font-[barlow]">
 
-      <h2 className="font-semibold mb-4 text-[22px] text-[#292929]">
+      <h2 className="font-semibold mb-4 text-[27px] md:text-[22px] text-[#292929]">
         Position Absolute Acı Pizza
       </h2>
 
@@ -127,24 +127,24 @@ const handleSubmit = async () => {
         <p className="text-[28px] font-bold text-[#292929]">
           85.50₺
         </p>
-        <div className="flex items-center text-base font-normal gap-10 text-[#5F5F5F] regular">
+        <div className="flex items-center md:text-base text-xl font-normal gap-10 text-[#5F5F5F] regular">
           <span>4.9</span>
           <span>(200)</span>
         </div>
       </div>
 
-      <p className="h-[173px] text-[#5F5F5F] text-base font-normal leading-[28,8] regular mb-4 mt-4">
+      <p className="md:h-[173px] h-[280.47px] text-[#5F5F5F] md:text-base text-xl font-normal leading-[28,8] regular md:mb-4 mb-8 mt-4">
         Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış,daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. .Küçük bir pizzaya bazen pizzetta denir.
       </p>
 
 
 
       {/* BOYUT + HAMUR */}
-      <div className="mt-4 mb-6 flex justify-between gap-12">
+      <div className="mt-4 mb-8 md:mb-6 flex justify-between gap-12">
 
         {/* SOL: BOYUT */}
-        <div className="text-base flex flex-col gap-4 w-1/2">
-          <label className="font-[barlow] text-[#292929] block text-xl font-semibold mb-2">
+        <div className=" flex flex-col gap-4 w-1/2">
+          <label className="font-[barlow] text-[#292929] block md:text-xl text-[22px] font-semibold mb-2">
              Boyut Seç <span className="text-[#D80027]">*</span>
           </label>
 
@@ -157,7 +157,7 @@ const handleSubmit = async () => {
              onChange={(e) => setBoyut(e.target.value)}
              className="w-xs h-[19px] accent-red-600"
             />
-            <span className="text-base font-medium text-[#5F5F5F]">Küçük</span>
+            <span className="md:text-base text-[20px] font-medium text-[#5F5F5F]">Küçük</span>
           </label>
 
           <label className="flex items-center gap-3 cursor-pointer">
@@ -169,7 +169,7 @@ const handleSubmit = async () => {
                 onChange={(e) => setBoyut(e.target.value)}
                 className="w-xs h-[19px] accent-red-600"
             />
-            <span className="text-base font-medium text-[#5F5F5F]">Orta</span>
+            <span className="md:text-base text-xl font-medium text-[#5F5F5F]">Orta</span>
           </label>
 
           <label className="flex items-center gap-3 cursor-pointer">
@@ -181,7 +181,7 @@ const handleSubmit = async () => {
               onChange={(e) => setBoyut(e.target.value)}
               className="w-xs h-[19px] accent-red-600"
             />
-            <span className="text-base font-medium text-[#5F5F5F]">Büyük</span>
+            <span className="md:text-base text-xl font-medium text-[#5F5F5F]">Büyük</span>
           </label>
 
         </div>
@@ -189,12 +189,12 @@ const handleSubmit = async () => {
         {/* SAĞ: HAMUR */}
         <div className="w-1/2">
 
-          <label className="font-[barlow] text-[#292929] block text-xl font-semibold mb-3">
+          <label className="font-[barlow] text-[#292929] block md:text-xl text-[22px] font-semibold mb-3">
             Hamur Seç <span className="text-[#CE2829]">*</span>
           </label>
 
           <img
-            className="h-[38px] w-[158px]"
+            className="h-[38px] md:w-[158px] w-[163.28px]"
             src="/src/assets/iteration-1-images/image.png"
             alt=""
           />
@@ -206,20 +206,20 @@ const handleSubmit = async () => {
 
         {/* EK MALZEMELER */}
       <div className="mt-8">
-        <h3 className="font-[barlow] text-[#292929] text-xl font-semibold mb-4">
+        <h3 className="font-[barlow] text-[#292929] md:text-xl text-[22px] font-semibold md:mb-4 mb-8">
           Ek Malzemeler
         </h3>
 
-        <p className="text-base text-[#5F5F5F] font-medium mb-8">
+        <p className="md:text-base text-xl text-[#5F5F5F] font-medium mb-8 ">
           En Fazla 10 malzeme seçebilirsiniz. 5₺
         </p>
 
-        <div className="grid grid-cols-3 gap-y-4 gap-x-8 mt-8 ">
+        <div className="grid md:grid-cols-3 grid-cols-2 gap-y-4 gap-x-8 mt-8">
 
           {extraItems.map((item) => (
             <label
               key={item}
-              className="flex items-center gap-2 cursor-pointer font-[Barlow] font-bold text-base text-[#5F5F5F]"
+              className="flex items-center gap-2 cursor-pointer font-[Barlow] font-bold md:text-base text-xl text-[#5F5F5F]"
             >
               <input
                 type="checkbox"
@@ -238,7 +238,7 @@ const handleSubmit = async () => {
                 disabled={!extras.includes(item) && extras.length >= 10}
                 className="w-xs h-[20.54px] accent-blue-600"
               />
-              <span className="font-bold font-[Barlow] text-base text-[#5F5F5F]">{item}</span>
+              <span className="font-bold font-[Barlow] md:text-base text-xl text-[#5F5F5F]">{item}</span>
             </label>
           ))}
 
@@ -246,13 +246,13 @@ const handleSubmit = async () => {
 
             {/* ✅ HATA UYARISI */}
             {extras.length < 4 && (
-              <p className="text-red-500 text-sm mt-3">
+              <p className="text-red-500 md:text-sm text-base md:mt-3 mt-4">
                 En az 4 malzeme seçmelisiniz.
               </p>
             )}
 
             {extras.length >= 4 && (
-              <p className="text-green-600 text-sm mt-3">
+              <p className="text-green-600 md:text-sm text-base mt-4 md:mt-3">
                 Seçilen malzeme sayısı: {extras.length}
               </p>
             )}
@@ -261,14 +261,14 @@ const handleSubmit = async () => {
 
 
        {/* ISIM */}
-      <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-3">İsim</h3>
+      <div className="mb-6 mt-8">
+        <h3 className="md:text-xl text-[22px] font-semibold mb-3">İsim</h3>
 
      <input
   type="text"
   value={isim}
   onChange={(e) => setIsim(e.target.value)}
-  className="border rounded-lg p-3 w-full"
+  className="border rounded-lg p-3 md:text-sm text-lg w-full"
   placeholder="Adınızı giriniz"
   data-testid="name-input"
 />
@@ -276,7 +276,7 @@ const handleSubmit = async () => {
 
         {/* TRIMLI KONTROL */}
         {isim.trim().length > 0 && isim.trim().length < 3 && (
-          <p className="text-red-500 text-sm mt-2">
+          <p className="text-red-500 md:text-sm text-lg mt-2">
             İsim en az 3 karakter olmalıdır.
           </p>
         )}
@@ -285,9 +285,9 @@ const handleSubmit = async () => {
 
         {/* NOT */}
       <div className="mb-8 mt-8 font-[Barlow]">
-          <h3 className="text-xl text-[#292929] font-semibold mb-3">Sipariş Notu</h3>
+          <h3 className="md:text-xl text-[22px] text-[#292929] font-semibold mb-3">Sipariş Notu</h3>
           <textarea
-            className="border w-[531px] h-[56px] text-sm font-medium text-[#5F5F5F] rounded-lg p-4"
+            className="border md:w-[531px] w-[420px] h-[56px] md:text-sm text-lg font-medium text-[#5F5F5F] rounded-lg p-4"
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="Siparişine eklemek istediğin bir not var mı?"
@@ -296,69 +296,109 @@ const handleSubmit = async () => {
 
 
 
+   
+<div className="flex flex-col md:flex-row mb-8">
+
+
+  {/* DESKTOP ADET */}
+  <div className="hidden md:flex w-[170px] h-[56px] mx-2 order-1">
+    <button
+      onClick={() => setCount((c) => Math.max(1, c - 1))}
+      className="bg-[#FDC913] w-[56px] h-[56px] font-bold rounded-l"
+    >
+      -
+    </button>
+
+    <div className="w-[56px] h-[56px] border flex items-center justify-center">
+      {count}
+    </div>
+
+    <button
+      onClick={() => setCount((c) => c + 1)}
+      className="bg-[#FDC913] w-[56px] h-[56px] font-bold rounded-r"
+    >
+      +
+    </button>
+  </div>
 
 
 
-      <div className="flex mb-8">
+  {/* SİPARİŞ KARTI */}
+  <div className="md:w-[350px] w-full flex flex-col order-2">
 
-        {/* ADET */}
-        <div className="flex w-[170px] h-[57px] mx-2 mb-8">
-          <button
-            onClick={() => setCount((c) => Math.max(1, c - 1))}
-            className="bg-[#FDC913] w-[56px] h-[56px] px-4 py-2 text-base font-bold  rounded"
-          >
-            -
-          </button>
+    <div className="border p-6 rounded-lg mb-0">
+      <h3 className="text-xl font-[Barlow] font-semibold text-[#292929] mb-4">
+        Sipariş Toplamı
+      </h3>
 
-          <div className="w-[56px] h-[56px] border-[#D9D9D9] border flex items-center justify-center">
-           <span className="text-base font-bold">{count}</span>
-          </div>
-
-
-          <button
-            onClick={() => setCount((c) => c + 1)}
-            className="bg-[#FDC913] w-[56px] h-[56px] px-4 py-2 text-base font-bold  rounded"
-          >
-            +
-          </button>
-        </div>
-
-        <div className="w-[350px] h-[255px] flex flex-col mb-8">
-
-              <div className="w-[350px] h-[197px] border border-[#D9D9D9] p-6 rounded-lg mb-0">
-                <h3 className="text-xl font-[Barlow] font-semibold text-[#292929] mb-4">
-                  Sipariş Toplamı
-                </h3>
-
-                {/* Seçimler */}
-                <div className="flex justify-between text-lg font-semibold text-[#5F5F5F]">
-                    <span>Seçimler</span>
-                    <span>{selectionTotal.toFixed(2)}₺</span>
-                </div>
-
-                {/* Toplam */}
-                <div className="flex justify-between text-lg font-semibold text-[#CE2829] mt-2">
-                    <span>Toplam</span>
-                    <span>{total.toFixed(2)}₺</span>
-                </div>          
-              </div>
-              <div className="h-[62px] bg-[#FDC913] text-center py-4 mb-4">
-                <button data-testid="submit-button"
-                  onClick={handleSubmit}
-                  disabled={!formValid || loading}
-                >
-                  {loading ? "Gönderiliyor..." : "SİPARİŞ VER"}
-                </button>
-
-              </div>
-
-        </div>
+      <div className="flex justify-between text-lg font-semibold text-[#5F5F5F]">
+        <span>Seçimler</span>
+        <span>{selectionTotal.toFixed(2)}₺</span>
       </div>
 
+      <div className="flex justify-between text-lg font-semibold text-[#CE2829] mt-2">
+        <span>Toplam</span>
+        <span>{total.toFixed(2)}₺</span>
+      </div>
+    </div>
+{/* 💻 DESKTOP ALT BUTON */}
+<button
+  onClick={handleSubmit}
+  disabled={!formValid || loading}
+   className="bg-[#FDC913] h-[56px] md:w-[350px] w-full text-lg font-bold hidden md:block mt-0 md:mx-auto"
+>
+  {loading ? "Gönderiliyor..." : "SİPARİŞ VER"}
+</button>
+  </div>
 
+
+
+  {/* 📱 MOBİL ADET + BUTON YANYANA */}
+  <div className="flex items-center gap-4 w-full md:hidden order-3 justify-center">
+
+    {/* ADET */}
+    <div className="flex max-w-[200px] h-[56px]">
+      <button
+        onClick={() => setCount((c) => Math.max(1, c - 1))}
+        className="bg-[#FDC913] w-[56px] h-[56px] font-bold rounded-l"
+      >
+        -
+      </button>
+
+      <div className="w-[56px] h-[56px] border flex items-center justify-center">
+        {count}
+      </div>
+
+      <button
+        onClick={() => setCount((c) => c + 1)}
+        className="bg-[#FDC913] w-[56px] h-[56px] font-bold rounded-r"
+      >
+        +
+      </button>
+    </div>
+
+    {/* MOBİL BUTON */}
+    <button
+      onClick={handleSubmit}
+      disabled={!formValid || loading}
+      className="bg-[#FDC913] h-[56px] w-full max-w-[200px] font-bold"
+    >
+      {loading ? "Gönderiliyor..." : "SİPARİŞ VER"}
+    </button>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+</div>
        
-      </div>
-
+     
     </>
   );
 }
