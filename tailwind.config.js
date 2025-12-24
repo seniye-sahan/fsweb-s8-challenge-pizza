@@ -8,6 +8,8 @@ module.exports = {
       fontFamily: {
         barlow: ['Barlow', 'sans-serif'],
          roboto: ["'Roboto Condensed'", "sans-serif"],
+         satisfy: ['"Satisfy"', 'cursive'],
+         londrina: ['"Londrina Solid"', 'cursive'],
       },
     },
   },
