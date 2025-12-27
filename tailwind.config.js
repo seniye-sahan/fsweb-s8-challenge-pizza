@@ -10,6 +10,7 @@ module.exports = {
          roboto: ["'Roboto Condensed'", "sans-serif"],
          satisfy: ['"Satisfy"', 'cursive'],
          londrina: ['"Londrina Solid"', 'cursive'],
+          quattro: ['Quattrocento', 'serif'],
       },
     },
   },
