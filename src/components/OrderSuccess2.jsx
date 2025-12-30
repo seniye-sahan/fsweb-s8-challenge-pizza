@@ -1,23 +1,14 @@
-export default function OrderSuccess2() {
+export default function OrderSuccess2({ order }) {
+ if (!order) return null;
+
   return (
     <div className="min-h-screen w-full bg-[#1A1A1A] flex flex-col">
+
       {/* ------- KIRMIZI BAŞARILI SAYFA ------- */}
-      <section
-        className="
-          w-full
-          h-auto
-          bg-[#CE2829] 
-          flex flex-col items-center
-          pb-16
-        "
-      >
-        <div
-          className="
-            flex flex-col items-center
-            text-white text-center
-            mt-4
-          "
-        >
+      <section className="w-full h-auto bg-[#CE2829] flex flex-col items-center pb-16">
+
+        <div className="flex flex-col items-center text-white text-center mt-4">
+
           <img
             src="/src/assets/iteration-1-images/logo.svg"
             alt="logo"
@@ -33,50 +24,62 @@ export default function OrderSuccess2() {
           </h1>
 
           <p className="font-barlow font-semibold text-[22px] mt-6">
-            Position Absolute Acı Pizza
+            {order.isim}
           </p>
 
           <div className="w-[202px] text-left mt-4">
+
             <p className="pb-4">
-              Boyut: <span className="font-bold">L</span>
+              Boyut: <span className="font-bold">{order.boyut}</span>
               <span className="text-red-500 ml-1">*</span>
             </p>
 
             <p className="pb-4">
-              Hamur: <span className="font-bold">Süpper İnce</span>
+              Hamur: <span className="font-bold">{order.hamur || "Seçilmedi"}</span>
               <span className="text-red-500 ml-1">*</span>
             </p>
 
             <p className="pb-4">
               Ek Malzemeler:{" "}
               <span className="font-bold">
-                Pepperoni, Sosis, Mısır, Ananas, Jalepeno
+                 {order.extras?.length > 0
+  ? order.extras.join(", ")
+  : "Seçilmedi"}
+
               </span>
               <span className="text-red-500 ml-1">*</span>
             </p>
+
           </div>
 
           {/* SİPARİŞ KARTI */}
           <div className="w-[350px] font-barlow mt-6">
             <div className="border border-[#FAF7F2] rounded-lg p-8">
+
               <h3 className="text-xl font-semibold text-white text-left mb-8">
                 Sipariş Toplamı
               </h3>
 
               <div className="flex justify-between text-lg font-semibold text-white mb-4">
-                <span>Seçimler</span>
-                <span>25.00₺</span>
+               <span>Seçimler</span>
+<span>{order.selectionTotal?.toFixed(2)}₺</span>
+
+
               </div>
 
               <div className="flex justify-between text-lg font-semibold text-white">
-                <span>Toplam</span>
-                <span>110.50₺</span>
+             <span>Toplam</span>
+<span>{order.total?.toFixed(2)}₺</span>
+
+
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
+      {/* footerin aynısı kalabilir */}
       {/* ------- FOOTER ------- */}
       <footer className="w-full bg-[#1A1A1A] py-12 mt-auto">
         <div
@@ -210,4 +213,10 @@ export default function OrderSuccess2() {
       </footer>
     </div>
   );
+
+
+
+      
+  
+  
 }

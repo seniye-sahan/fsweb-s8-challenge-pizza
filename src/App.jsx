@@ -8,17 +8,20 @@ import Home2 from './components/Home2'
 import OrderForm2 from './components/OrderForm2'
 
 function App() {
-  const [count, setCount] = useState(0)
- const [page, setPage] = useState("home");
+  const [page, setPage] = useState("home");
+  const [orderData, setOrderData] = useState(null);
+
   return (
     <>
-    <OrderForm2/>
-        {/*page === "home" && <Home setPage={setPage} />*/}
-      {/*page === "order" && <OrderForm setPage={setPage} />*/}
-      {/*page === "success" && <OrderSuccess />*/}
-      
+  {page === "home" && <Home2 setPage={setPage} />}
+{page === "order" && (
+  <OrderForm2 setPage={setPage} setOrderData={setOrderData} />
+)}
+{page === "success" && <OrderSuccess2 order={orderData} />}
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+

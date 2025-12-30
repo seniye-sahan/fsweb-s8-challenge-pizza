@@ -107,9 +107,13 @@ export default function Home2({setPage}) {
 
             <p className="text-[68px] font-quattro font-bold w-[288.18px] md:w-[288.18px] h-[148px] leading-[72px] mt-4">Özel Lezzetus</p>
             <p className="font-barlow text-xl font-semibold mt-0">Position:Absolute Acı Burger</p>
-            <button className="bg-white text-[#CE2829] text-sm font-semibold font-barlow px-6 py-2 rounded-full w-[138px] h-[48px] mt-4">
-                SİPARİŞ VER
-            </button>
+          <button
+  onClick={() => setPage("order")}
+  className="bg-white text-[#CE2829] text-sm font-semibold font-barlow px-6 py-2 rounded-full w-[138px] h-[48px] mt-4"
+>
+  SİPARİŞ VER
+</button>
+
             </div>
 
         
@@ -126,9 +130,13 @@ export default function Home2({setPage}) {
                 Hackathlon Burger Menü
             </p>
 
-            <button className="bg-white text-[#CE2829] text-sm font-semibold font-barlow px-6 py-2 rounded-full w-[138px] h-[48px] mt-4">
-                SİPARİŞ VER
-            </button>
+         <button
+  onClick={() => setPage("order")}
+  className="bg-white text-[#CE2829] text-sm font-semibold font-barlow px-6 py-2 rounded-full w-[138px] h-[48px] mt-4"
+>
+  SİPARİŞ VER
+</button>
+
             </div>
 
             <img
@@ -156,10 +164,13 @@ export default function Home2({setPage}) {
             npm gibi kurye
             </p>
 
-            <button className="bg-white text-[#CE2829] text-sm font-semibold font-barlow
-            rounded-full w-[138px] h-[48px] mt-4">
-            SİPARİŞ VER
-            </button>
+          <button
+  onClick={() => setPage("order")}
+  className="bg-white text-[#CE2829] text-sm font-semibold font-barlow px-6 py-2 rounded-full w-[138px] h-[48px] mt-4"
+>
+  SİPARİŞ VER
+</button>
+
 
         </div>
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 //import "./OrderForm.css";
 import axios from "axios";
 
-export default function OrderForm2({setPage}) {
+export default function OrderForm2({ setPage, setOrderData }) {
 
 const [isim, setIsim] = useState("");
 const [note, setNote] = useState("");
@@ -10,6 +10,8 @@ const [boyut, setBoyut] = useState("");
 const [extras, setExtras] = useState([]);
 const [count, setCount] = useState(1);
 const [loading, setLoading] = useState(false);
+
+
 
 
 const formValid =
@@ -42,7 +44,6 @@ const extraItems = [
 
 
 const handleSubmit = async () => {
-
   if (!formValid || loading) return;
 
   const payload = {
@@ -54,42 +55,54 @@ const handleSubmit = async () => {
     toplam: total,
   };
 
-  console.log("GÖNDERİLEN PAYLOAD:", payload);
-
   setLoading(true);
 
   try {
     const response = await axios.post(
       "https://app.reqres.in/api/pizza",
-      payload,
-      {
-        headers: {
-          "x-api-key": "reqres-free-v1",
-          "Content-Type": "application/json",
-        },
-      }
+      payload
     );
 
-    // Normal şartlarda burası çalışırdı
     console.log("API RESPONSE:", response.data);
 
-  } catch (error) {
-    console.warn("CORS / NETWORK ENGELİ – MOCK RESPONSE KULLANILDI");
+    // SUCCESS
+    setOrderData({
+      isim,
+      boyut,
+      hamur: "Seçilmedi",
+      extras,
+      selectionTotal,
+      total,
+    });
 
-    // MOCK BACKEND RESPONSE (reqres davranışı)
+    setPage("success");
+
+  } catch (error) {
+    console.warn("CORS ENGELİ – MOCK RESPONSE");
+
     const mockResponse = {
       ...payload,
       id: Math.floor(Math.random() * 10000),
       createdAt: new Date().toISOString(),
     };
 
-    console.log("MOCK API RESPONSE:", mockResponse);
+    console.log("MOCK:", mockResponse);
+
+    setOrderData({
+      isim,
+      boyut,
+      hamur: "Seçilmedi",
+      extras,
+      selectionTotal,
+      total,
+    });
+
+    setPage("success");
   } finally {
     setLoading(false);
   }
-
-   setPage("success");
 };
+
 
 
 
